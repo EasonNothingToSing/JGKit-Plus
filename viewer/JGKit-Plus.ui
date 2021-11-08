@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>JGKitPlusMainWindows</class>
+ <widget class="QMainWindow" name="JGKitPlusMainWindows">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>JGKit-Plus</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>800</width>
+     <height>558</height>
+    </size>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <layout class="QVBoxLayout" name="DeviceTreeWidget" stretch="2,1">
+      <item>
+       <layout class="QHBoxLayout" name="TreeAndMemoryWidget" stretch="1,1">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetDefaultConstraint</enum>
+        </property>
+        <item>
+         <widget class="QTreeView" name="DeviceDisplayTree"/>
+        </item>
+        <item>
+         <widget class="QTreeView" name="DeviceEditTree"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QTableView" name="MemoryView"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionSave_Configure"/>
+    <addaction name="actionSave_Configure_As"/>
+    <addaction name="actionImport_Configure"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSave_Configure">
+   <property name="text">
+    <string>Save Configure</string>
+   </property>
+  </action>
+  <action name="actionSave_Configure_As">
+   <property name="text">
+    <string>Save Configure As</string>
+   </property>
+  </action>
+  <action name="actionImport_Configure">
+   <property name="text">
+    <string>Import Configure</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
