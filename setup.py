@@ -22,7 +22,7 @@ VERSION = '1.0.0'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
-    'Pillow', 'pylink-square', 'bitstring', 'xlrd', 'PyQt5'
+    'Pillow', 'pylink-square', 'bitstring', 'xlrd', 'PyQt5', 'LSExcelParser'
 ]
 
 # What packages are optional?
