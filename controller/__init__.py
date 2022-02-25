@@ -1,6 +1,8 @@
 from viewer import *
 from module import *
 from PyQt5.QtWidgets import QApplication, QMainWindow, QStyleFactory
+from PyQt5.QtCore import pyqtSlot
+from PyQt5 import QtGui
 
 
 class JGKitMainwindows(QMainWindow, MainWidget.Ui_JGKitPlusMainWindows):
@@ -49,3 +51,86 @@ class JGKitMainwindows(QMainWindow, MainWidget.Ui_JGKitPlusMainWindows):
         self.DeviceEditTree.setModel(self.device_edit_model)
         for num, width in enumerate(JGKitDeviceEditModel.header_width):
             self.DeviceEditTree.setColumnWidth(num, width)
+
+    @pyqtSlot()
+    def on_Connect_clicked(self):
+        checked = self.Connect.isChecked()
+        self._status_invert(checked)
+        if checked:
+            self._status_bar_show_message("Connect to jlink")
+        else:
+            self._status_bar_show_message("Disconnect")
+
+    @pyqtSlot()
+    def on_Save_clicked(self):
+        pass
+
+    @pyqtSlot()
+    def on_Open_clicked(self):
+        pass
+
+    @pyqtSlot()
+    def on_Refresh_clicked(self):
+        pass
+
+    @pyqtSlot()
+    def on_MemAdd_clicked(self):
+        pass
+
+    @pyqtSlot()
+    def on_MemDel_clicked(self):
+        pass
+
+    @pyqtSlot()
+    def on_LeftMove_clicked(self):
+        pass
+
+    @pyqtSlot()
+    def on_RightMove_clicked(self):
+        _index = self.DeviceDisplayTree.currentIndex()
+        _sub_index = _index.model()
+        data = _sub_index.itemData()
+        print(_sub_index)
+
+    @pyqtSlot()
+    def on_Refresh_Hold_stateChanged(self):
+        checked = self.Refresh_Hold.isChecked()
+        if checked:
+            self._status_bar_show_message("Enable auto refresh")
+        else:
+            self._status_bar_show_message("Disable auto refresh")
+
+    @pyqtSlot()
+    def on_DeviceDisplayTree_doubleClicked(self):
+        print("double")
+
+    def _status_bar_show_message(self, msg, timeout=2000):
+        self.statusbar.showMessage(msg, timeout)
+
+    def _status_invert(self, clicked):
+        if clicked:
+            self.Save.setEnabled(True)
+            self.Open.setEnabled(True)
+            self.Refresh.setEnabled(True)
+            self.Refresh_Hold.setEnabled(True)
+            self.MemAdd.setEnabled(True)
+            self.MemDel.setEnabled(True)
+            self.actionSave_Configure.setEnabled(True)
+            self.actionSave_Configure_As.setEnabled(True)
+            self.actionImport_Configure.setEnabled(True)
+
+            self.Status.setPixmap(QtGui.QPixmap(JGKit_Status_Connect_Icon))
+        else:
+            self.Save.setEnabled(False)
+            self.Open.setEnabled(False)
+            self.Refresh.setEnabled(False)
+            self.Refresh_Hold.setEnabled(False)
+            self.Refresh_Hold.setChecked(False)
+
+            self.MemAdd.setEnabled(False)
+            self.MemDel.setEnabled(False)
+            self.actionSave_Configure.setEnabled(False)
+            self.actionSave_Configure_As.setEnabled(False)
+            self.actionImport_Configure.setEnabled(False)
+
+            self.Status.setPixmap(QtGui.QPixmap(JGKit_Status_Disconnect_Icon))

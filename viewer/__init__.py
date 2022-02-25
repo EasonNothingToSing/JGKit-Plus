@@ -5,14 +5,13 @@
 # Created by: PyQt5 UI code generator 5.11.3
 #
 # WARNING! All changes made in this file will be lost!
+from .assets import *
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QStyleFactory
 from PyQt5.QtCore import QTimer
 from PyQt5.QtGui import QStandardItemModel, QStandardItem, QIcon
 from viewer.MainWidget import Ui_JGKitPlusMainWindows
 from PyQt5.QtCore import QSize
-
-from .assets import *
 
 
 class JGKitSize(QSize):
@@ -41,13 +40,13 @@ class JGKitStandardItem(QStandardItem):
         self.setSizeHint(JGKitSize())
 
 
-class JGKitRegister(QStandardItem):
-    def __init__(self, register):
-        super(JGKitRegister, self).__init__()
-        self.register = register
-
-    def __iter__(self):
-        return self
+# class JGKitRegister(QStandardItem):
+#     def __init__(self, register):
+#         super(JGKitRegister, self).__init__()
+#         self.register = register
+#
+#     def __iter__(self):
+#         return self
 
 
 class JGKitDeviceEditModel(QStandardItemModel):

@@ -1,10 +1,36 @@
-<RCC>
-  <qresource prefix="/treeviewer" >
-      <file>device.png</file>
-      <file>field.png</file>
-      <file>register.png</file>
-  </qresource>
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/control" >
+        <file alias="connect.png">./.image/.connect/connect.png</file>
+        <file alias="play.png">./.image/.connect/play.png</file>
+        <file alias="play-dark.png">./.image/.connect/play-dark.png</file>
 
-  <qresource prefix="/imgs" >
-  </qresource>
+        <file alias="disconnect.png">./.image/.disconnect/disconnect.png</file>
+        <file alias="stop.png">./.image/.disconnect/stop.png</file>
+        <file alias="stop-dark.png">./.image/.disconnect/stop-dark.png</file>
+
+        <file alias="open.png">./.image/.file/open.png</file>
+        <file alias="open-dark.png">./.image/.file/open-dark.png</file>
+        <file alias="save.png">./.image/.file/save.png</file>
+        <file alias="save-dark.png">./.image/.file/save-dark.png</file>
+        <file alias="save-as.png">./.image/.file/save-as.png</file>
+
+        <file alias="refresh.png">./.image/.refresh/refresh.png</file>
+        <file alias="refresh-dark.png">./.image/.refresh/refresh-dark.png</file>
+    </qresource>
+
+    <qresource prefix="/treeviewer" >
+        <file alias="device.png">./.image/.treeview/device.png</file>
+        <file alias="field.png">./.image/.treeview/field.png</file>
+        <file alias="register.png">./.image/.treeview/register.png</file>
+    </qresource>
+
+    <qresource prefix="/memory" >
+        <file alias="add.png">./.image/.mem/add.png</file>
+        <file alias="delete.png">./.image/.mem/delete.png</file>
+    </qresource>
+
+    <qresource prefix="/icon" >
+        <file alias="kit.png">./.image/icon/kit.png</file>
+    </qresource>
 </RCC>
