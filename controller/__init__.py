@@ -20,6 +20,12 @@ class JGKitMainwindows(QMainWindow, MainWidget.Ui_JGKitPlusMainWindows):
         for num, width in enumerate(JGKitDeviceModel.header_width):
             self.DeviceDisplayTree.setColumnWidth(num, width)
 
+        # self.edit_device_model = JGKitDeviceEditModel()
+        # self.DeviceEditTree.setModel(self.edit_device_model)
+        # self.DeviceEditTree.setStyle(QStyleFactory.create('windows'))
+        # for num, width in enumerate(JGKitDeviceEditModel.header_width):
+        #     self.DeviceEditTree.setColumnWidth(num, width)
+
         def _list_render(info):
             t_list = []
             for i in JGKitDeviceModel.header_labels:
@@ -49,6 +55,7 @@ class JGKitMainwindows(QMainWindow, MainWidget.Ui_JGKitPlusMainWindows):
         # Load device edit model in tree view
         self.device_edit_model = JGKitDeviceEditModel()
         self.DeviceEditTree.setModel(self.device_edit_model)
+        self.DeviceEditTree.setStyle(QStyleFactory.create('windows'))
         for num, width in enumerate(JGKitDeviceEditModel.header_width):
             self.DeviceEditTree.setColumnWidth(num, width)
 
@@ -101,8 +108,14 @@ class JGKitMainwindows(QMainWindow, MainWidget.Ui_JGKitPlusMainWindows):
             self._status_bar_show_message("Disable auto refresh")
 
     @pyqtSlot()
-    def on_DeviceDisplayTree_doubleClicked(self):
-        print("double")
+    def on_RightMove_clicked(self):
+        index_list = self.DeviceDisplayTree.selectionModel().selectedIndexes()
+        print(index_list)
+        _item = []
+        for index in index_list:
+            print(index.data())
+            _item.append(index)
+        # self.device_edit_model.appendRow(index_list)
 
     def _status_bar_show_message(self, msg, timeout=2000):
         self.statusbar.showMessage(msg, timeout)

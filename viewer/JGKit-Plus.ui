@@ -309,13 +309,7 @@
          <enum>QLayout::SetDefaultConstraint</enum>
         </property>
         <item>
-         <widget class="QTreeWidget" name="DeviceDisplayTree">
-          <column>
-           <property name="text">
-            <string notr="true">1</string>
-           </property>
-          </column>
-         </widget>
+         <widget class="QTreeView" name="DeviceDisplayTree"/>
         </item>
         <item>
          <layout class="QGridLayout" name="TreeControlLayout">
@@ -396,12 +390,13 @@
          </layout>
         </item>
         <item>
-         <widget class="QTreeWidget" name="DeviceEditTree">
-          <column>
-           <property name="text">
-            <string notr="true">1</string>
-           </property>
-          </column>
+         <widget class="QTreeView" name="DeviceEditTree">
+          <property name="dragEnabled">
+           <bool>true</bool>
+          </property>
+          <property name="dragDropMode">
+           <enum>QAbstractItemView::DragDrop</enum>
+          </property>
          </widget>
         </item>
        </layout>
